@@ -81,9 +81,10 @@
 
      function set_entry(entry) {
        var url = "https://raw.githubusercontent.com/cmaes/philemonandminerva/master/diary-scan/";
+       url = url + entry.pages[0] + ".jpg";
        $('#diary-entry').text(entry.entry);
        $('#entry-date').text(entry.date);
-       $('#entry-page').html("<img src='" + url + entry.pages[0] + ".jpg' width='600px'/>");
+       $('#entry-page').html("<a href='" + url + "'><img src='" + url + "' width='600px'/></a>");
      }
 
     </script>
