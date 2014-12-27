@@ -40,8 +40,12 @@
          surveyOverlay.setMap(null);
          surveyOverlay2.setMap(null);
        }
-     }
-
+     };
+     function pad(num, size) {
+       var s = num+"";
+       while (s.length < size) s = "0" + s;
+       return s;
+     };
     function initialize() {
         var mapOptions = {
           center: { lng:-122.682317, lat: 44.789566},
@@ -80,11 +84,14 @@
       google.maps.event.addDomListener(window, 'load', initialize);
 
      function set_entry(entry) {
-       var url = "https://raw.githubusercontent.com/cmaes/philemonandminerva/master/diary-scan/";
-       url = url + entry.pages[0] + ".jpg";
+       var baseurl = "https://raw.githubusercontent.com/cmaes/philemonandminerva/master/diary-scan/";
+       var url = baseurl + entry.pages[0] + ".jpg";
        $('#diary-entry').text(entry.entry);
        $('#entry-date').text(entry.date);
-       $('#entry-page').html("<a href='" + url + "'><img src='" + url + "' width='600px'/></a>");
+       $('#entry-page').html("Page " + entry.pages[0] + "<br/>" +
+                             "<a href='" + url + "'><img src='" + url + "' width='600px'/></a>" +
+                             "<span style='float:left'><a href='" + baseurl + pad(+entry.pages[0]-1,2) + ".jpg'>Previous page</a></span>" +
+                             "<span style='float:right'><a href='" + baseurl + pad(+entry.pages[0]+1,2) + ".jpg'>Next page</a></span>");
      }
 
     </script>
@@ -1163,7 +1170,7 @@ well as a <a href="https://raw.githubusercontent.com/cmaes/philemonandminerva/ma
     </tbody>
   </table>
 
-  <div id="spacer" style="height:20px">
+  <div class="spacer" style="height:20px">
   </div>
 
   <table id="mct1" class="ct1 cl2 cp5 cc3 cd2 cg4 cf6 ci6 cu5 cj2 mct" cellspacing="0">
@@ -1323,6 +1330,8 @@ well as a <a href="https://raw.githubusercontent.com/cmaes/philemonandminerva/ma
 </div>
 <div id="entry-page">
 </div>
+<div class="spacer" style="height:20px">
+</div>
 
 
 <h3>Philemon and Minerva's Homestead</h3>
@@ -1380,10 +1389,9 @@ Please email Chris Maes (cmmaes@gmail.com), descendent of Philemon Morriss, or E
    id = num2month[month] + year;
    element = document.getElementById(id);
    if (element) {
-     console.log(day);
      $('#' + id + ' td').each(function() {
        if (+$(this).text() === day) {
-         $(this).html("<a href='#diary-entry' onclick='set_entry(diarydata.entries[" + i + "])'>" + day + "</a>");
+         $(this).html("<a href='#entry-date' onclick='set_entry(diarydata.entries[" + i + "])'>" + day + "</a>");
        }
      });
    }
