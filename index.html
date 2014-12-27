@@ -1381,7 +1381,7 @@ Please email Chris Maes (cmmaes@gmail.com), descendent of Philemon Morriss, or E
      console.log(day);
      $('#' + id + ' td').each(function() {
        if (+$(this).text() === day) {
-         $(this).html("<a href='javascript:void(0)' onclick='set_entry(diarydata.entries[" + i + "])'>" + day + "</a>");
+         $(this).html("<a href='#diary-entry' onclick='set_entry(diarydata.entries[" + i + "])'>" + day + "</a>");
        }
      });
    }
