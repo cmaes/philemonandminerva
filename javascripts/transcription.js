@@ -683,13 +683,9 @@ diarydata = { entries: [
       pages: ["75"],
       entry: "April the 3, 1853. This has been a verry wet drisley rainny time for a few days past. But it is quite warm today and the grass looks fine. And a few flying clowds."
     },
-    { date: "10/01/1853",
-      pages: ["87"],
-      entry: "A minute of the winter of 1853 It was quite warm all fall and pleasant. The rany season set in about the first of October. And gave us a shower off an on till the first of December."
-    },
     { date: "12/01/1853",
       pages: ["87"],
-      entry: "The rany season set in about the first of October. And gave us a shower off an on till the first of December. Then it did rain prety hard for a few days."
+      entry: "A minute of the winter of 1853 It was quite warm all fall and pleasant. The rany season set in about the first of October. And gave us a shower off an on till the first of December. Then it did rain prety hard for a few days."
     },
     { date: "12/23/1853",
       pages: ["87"],
