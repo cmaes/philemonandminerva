@@ -400,7 +400,7 @@ diarydata = { entries: [
       entry: "Sunday the 15 day of August, campt on Powder River and travled over the first slew of P.R. 5 miles. Then 5 miles to the second slew. Then 6  miles to one branch of Powder river. Then to powder river 4 miles over a fine roling country. And crost some few little streams of warter and some rocky roads."
     },
     { date: "08/16/1852",
-      pages: ["46", "48", "49"]
+      pages: ["46", "48", "49"],
       entry: "Monday the 16 day of August. Wee have fine roads to day. The first part of the road is some rough. Then down a long desent and come to a little branch of warter. And good grass. 8 miles. Stopt and knoond. Hear the bluffs come all together and the mountains is covered with timber on  your left. Then yo[u] doo assend a hill. The soil doose look black and  deep and looks like the purraries of Ioway. The wild sage doose knot make any shoe today [that is, the wild sage didn't show up today...  nothing to do with footwear]. I think it is a boat to gave out. Wee get to the grand rounds this evening. The road is verry rough the last 2 miles. A tremendious long hill to go down. This is one of the preties [prettiest] valles that I ever seen. It is well wartered and the finest grass I ever seen. Surrounded with hy mountains and timber on the west  side of the mountains. This valley is 8 miles across it. Then wee take the blew mountains. Wee lay about the middle of the valley half the day and this is Tuesday. Lizabeth is sick today [Lizabeth may have been one  of Philemon's children by his first wife, Nancy]."
     },
     { date: "08/17/1852",
