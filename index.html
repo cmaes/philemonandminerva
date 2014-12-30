@@ -30,6 +30,7 @@
     var surveyOverlay2;
     var map;
     var map2;
+    var markers = [];
     function toggleSurvey(id) {
        console.log(id);
        if (+id === 1) {
@@ -89,10 +90,15 @@
         }
       }
 
-     clickfn = function (j) {
+     clickfn = function (j, marker) {
        return function() {
+             var i;
              var top = document.getElementById('entry-date').offsetTop;
              set_entry(diarydata.entries[j], j);
+             for (i = 0; i < markers.length; i++) {
+              markers[i].setIcon('http://maps.google.com/mapfiles/marker.png');
+             }
+             marker.setIcon('http://maps.google.com/mapfiles/ms/icons/yellow-dot.png');
              window.scrollTo(0, top);
            };
       }
@@ -105,8 +111,10 @@
                        position: new google.maps.LatLng(locations[i].lat, locations[i].lon),
                        map: map,
                        title: locations[i].name,
+                       icon:'http://maps.google.com/mapfiles/marker.png'
                      });
-         google.maps.event.addDomListener(marker, 'click', clickfn(j));
+         markers.push(marker);
+         google.maps.event.addDomListener(marker, 'click', clickfn(j, marker));
       }
       };
 
