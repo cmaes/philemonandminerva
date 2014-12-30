@@ -5,6 +5,7 @@ diarydata = { entries: [
     },
     { date: "04/21/1852",
       pages: ["03", "04"],
+      locations: [{ name: "Council Bluffs", lat: 41.25, lon: -95.866667}],
       entry: "The first bought nearly all my Teams and waggons and fit out in one week and fixt up evrything by the 21st day of April 1852 and started at 10 o'clock on Wednesday.  And bid old neighbours and acquaintes - adiew. So we maid hour [our] way for Counsel Bluffs on the Mosourie River a disstance of 180 miles.  We had good luck, some bad roads and one or 2 rainy days. Some corn from 25 cts. to 1.50 cts. [$1.50] per bushel."
     },
     { date: "04/29/1852",
@@ -25,14 +26,18 @@ diarydata = { entries: [
     },
     { date: "05/12/1852",
       pages: ["05"],
+      locations: [{ name: "Omaha", lat: 41.2075468, lon: -96.1689024},
+                  { name: "Elkhorn river", lat:  41.3649174, lon: -96.2816839}],
       entry:"May the 12 -- 1852. Wednesday the 12 day as wee leave the Mosourie River, wee travel on till wee get to the Loop fork, a disstant of 25 milds. we travel over a hy dry roling country. 2 or 3 good plaises [places] for wood and warter. Then wee get out of the OHEMAW inden country after wee cros the Elk fork. Then wee got in amoung the Pawnee indiens for 75 milds. It is now 3 o'clock and rainning and about 100 waggons to cross. All well and in good hart except Mr. Hays and he is so as to go about. This stream is about the sise of the desmoin [Des Moines River]."
     },
     { date: "05/13/1852",
       pages: ["05", "06"],
+      locations: [{ name: "Platte River", lat: 41.3428033, lon: -96.4323084}],
       entry: "Thursday the 13 all up early, brecfast eat, teams yoaked up and rold on 3 milds to Mud Creek, and made a bridg out of willows. There is about 100 teams hear at pressent, wee doo cross about 10 o'clock, wee did travel on till 12 o'clock then ped. [penned] this. A fine day the meaddows is green and a fine gale of wind from the south. And about 50 teams together, ox teams and good roads and level.  At 4 o'clock struck camp and pitcht tents and good level roads. Came in site of the Plat River about 2 o'clock and wee still keep up its beautiful valles. So ends this afterknoon with a good gale of wind.  Some timber on the flat but mostly cottonwood. It looks verry much like rain this afternoon."
     },
     { date: "05/14/1852",
       pages: ["06"],
+      locations: [{ name: "Shell Creek", lat: 41.4553871, lon: -96.9991673}],
       entry: "Friday the 14, early up this morning, good grass, 10 inches hy the grass is pretty good so fare and has been since wee struck the Plat River, good on till noon, wee eat dinner and let hour cattle grase. And quite a number of teams together. The Plat river looks fine, runs rappid and verry muddy. Some fine groves of timber such as cottonwood willow and is from 3 to 400 yards wide. Wee stop one hour, know [now] for a good afterknoons travel, wee did travel untill one hour by sun and thren crost Shel Creek and there was quite a number of Indiens. They demanded pay for crossin the creek but they got but little pay for it, I assure you. We went on one mild, then stayd all knight where we had lotts of grass. And did feast on wild onions, Amen for that. 49  milds from Loop fork."
     },
     { date: "05/15/1852",
@@ -41,6 +46,7 @@ diarydata = { entries: [
     },
     { date: "05/16/1852",
       pages: ["08"],
+      locations: [{name: "Loup River", lat: 41.419122, lon: -97.3677964}],
       entry: "Sunday the 16 morning. Went 2 milds and came to the ferry on Loop fork, rested the ballance of the day Sunday."
     },
     { date: "05/17/1852",
@@ -53,6 +59,7 @@ diarydata = { entries: [
     },
     { date: "05/19/1852",
       pages: ["08", "09"],
+      locations: [{name: "Cedar River", lat: 41.3750481, lon: -97.9318369}, {name: "Loup River", lat: 41.3750481, lon: -97.9318369}],
       entry: "Wednesday the 19 day of May, up early this morning and crost the Loop fork 3 milds above Ceder River, this is a small stream one prong of the Loop fork. Then lay by all day for the weomen to wash and sun our flower [flour] and [dried, perserved] fruit and clothing [which got wet during the river crossing]. This rout is just found out by the emmegrants."
     },
     { date: "05/20/1852",
@@ -61,10 +68,13 @@ diarydata = { entries: [
     },
     { date: "05/21/1852",
       pages: ["09"],
+      locations: [{name: "Platte River", lat: 41.119157, lon: -98.0056088}],
       entry: "Friday the 21st day of May 1852, This is a weet [wet] drisly morning a good veal stake for breacfast. Will Hoget cild [killed] a veal last knight. So gose the day till knight, and a wet day is has been and hard on the teams. Know wee come in sight of Plat river againe. And it still ceeps rainning wet. So ends the day. All weet to nite."
     },
     { date: "05/22/1852",
       pages: ["10"],
+      locations: [{name: "Wood River", lat: 41.0180764, lon: -98.1254142},
+                  {name: "Platte River", lat: 40.9712063, lon: -98.1851523}],
       entry: "Satirday the 22 day of May. Travelld about 18 milds to day. And lay on the banks of the Plat river it is about 4 milds west of wood creek. It has cleard off fine this evening. All in good sperrets, no buffalow sen yet but plenty of snakes."
     },
     { date: "05/23/1852",
@@ -117,6 +127,7 @@ diarydata = { entries: [
     },
     { date: "06/04/1852",
       pages: ["13"],
+      locations: [{name: "Chimeney Rock", lat: 41.7117753, lon: -103.2861958}],
       entry: 'Friday the 4 of June. good roads only rather sandy and verry hard a good south wind, dry indeed. Wee are in sight of the chimney rock. Those ancient towers and hills. Dose look beautiful. They do look as tho some nation of people had vuiseted [visited, in this sense meaning "caused to happen" or "built"] them some 2 or 3 hundred years ago.'
     },
     { date: "06/05/1852",
@@ -125,6 +136,7 @@ diarydata = { entries: [
     },
     { date: "06/06/1852",
       pages: ["13"],
+      locations: [{name: "Chimney Rock", lat: 41.7252163, lon: -103.329396}],
       entry: "Sunday the 6. The roads good and a cool and plessant day for traveling.  And near the Chimney Rock. This is a beautiful high tower and a great sight for the travler the see."
     },
     { date: "06/07/1852",
@@ -141,6 +153,7 @@ diarydata = { entries: [
     },
     { date: "06/10/1852",
       pages: ["14"],
+      locations: [{name: "Fort Laramie", lat: 42.202776, lon: -104.557675}],
       entry: "Thursday the 10, Past fort Larrima [Laramie] about 2 oclock in the afterknoon. Mrs. Stumbo is very sick."
     },
     { date: "06/11/1852",
@@ -169,6 +182,7 @@ diarydata = { entries: [
     },
     { date: "06/17/1852",
       pages: ["15"],
+      locations: [{ name: "Mormon Ferry", lat: 42.8647258, lon: -106.3068451}],
       entry: "Thursday the 17 of June. Stopt to noon at the middle ferry good grass and warter. It is 11 oclock and 11 milds to the upper ferry on Plat river. And verry bad sand roads and broken ground."
     },
     { date: "06/18/1852",
@@ -177,10 +191,13 @@ diarydata = { entries: [
     },
     { date: "06/19/1852",
       pages: ["16"],
+      locations: [{ name: "Willow Springs", lat: 42.674643, lon: -106.7932539}],
       entry: "Satirday the 19, wee left Plat river and went to the willow springs. A disstant of 14 milds. Noond and went 8 milds and campt. Wood and grass scears [scarce] but plenty of warter in the branch. There is plenty of greas wood hear. This is a small kind of shubrrey [shrubbery]."
     },
     { date: "06/20/1852",
       pages: ["16", "17", "18"],
+      location: [{name: "Independence Rock", lat: 42.493656, lon: -107.137105},
+                 {name: "Devil's Gate", lat: 42.448409, lon: -107.210399}],
       entry: "Sunday The 20, up early all hands to buisness. Oxen look quite gant [gaunt] this morning. All in prety good health. Wee start at 8 oclock. Several tires loos on hour waggons. Broken ground to travel over today. So wee travelled on to the great independant rock. A disstant of 12 milds. Got there about 12 o'clock. This rock, its a Natural curosity, it is about 200 and 50 feet high and covers between 5 and 10 acers of ground. It is admired by the many thousands ho [who] passes it for its beauty. And there is thousands of names ingraved on the stone that will stand there for ages to come. And on the south side of the river of sweet warter there is some verry high hills and ther appears to bee great volcanos of fire, the smoke gushes out in many places. The smoke once and a while looks black just tho it came off of stone coal and at other times it looks natural. Wee crost the river one mild above this rock. It is good crossing and is 3 rods wide and 3 feet deep. grass scears. Then wee went on 4 milds to the Devels gate and on the east side of the rocks wee find this another Natural curosity to see how nature has opend a wa threw this mountain for the channel of sweet warter to run threw. The gap is 20 feet wide and the clefts of rocks on each side perpendilkular and 400 feet hy. Grass scears. Hear is some pine and seder wood and plenty enough for camping purposses. This road is verry hard on oxens feet and the roads dry and dusty. O, yes I forgot to put it in this, indepennant rock stonds on a beautiful plais and all aloan. And comes within 25 feet of the bank of the river of sweet warter. This stream I can not tell what it took its name from."
     },
     { date: "06/21/1852",
@@ -201,18 +218,24 @@ diarydata = { entries: [
     },
     { date: "06/25/1852",
       pages: ["20"],
+      locations: [{name: "Strawberry Creek", lat: 42.434485, lon:-108.553288}],
       entry: "Friday the 25. Know we leav sweet warter river and assend the Hy bluffs, where we are in playing [plain] view of the snow, on hour wright. Wee traveld till knoon 10 milds to strawberry Creek, warter and some grass. The road is mostly good. This evening wee travel to one of the branches of sweet warter. A disstant of 10 milds and campt, warter is plenty and not much grass. Wee hav travelld over some snow today and eat of it. I have seen it 4 feet deep today. 20 milds today."
     },
     { date: "06/26/1852",
       pages: ["21"],
+      locations: [{name: "South Pass", lat:42.343913, lon:-108.886670},
+                  {name: "Pacific Creek", lat: 42.3375514, lon:-108.9382199}],
       entry: "June 26 Satirday Morning. Left the river sweet warter for the last time this morning, snow plenty. My wife stood with a beautiful bunch of flowers that she geathered this morning in one hand and a big snow ball in the other. Wee had a fine time a snow balling each other. Know 10 milds to the summet on south pass where it is abov the sea. Then 2 milds to Prosific [Pacific] Creek and campt 2 milds down the creek."
     },
     { date: "06/27/1852",
       pages: ["21", "22"],
+      locations: [{name: "Parting of the Ways", lat: 42.2851392, lon: -109.057786},
+                  {name: "Little Sandy", lat:42.259224, lon:-109.302118}],
       entry: "Sunday the 27, Left Prosific creek this morning came to dry creek 9 milds. Water scears and bad, no grass. One mild and knoond without grass or warter or wood. Came on to the junction of the road where it devids. One gows to Salt Lake and the other to Callifornia. 6 milds wee take Left hand road. Hear is the plais that Hays left us. Hays left today. And go on to Little Sandy 7 1/2 milds and campt. The day is fine and the roads is good. Today 22 1/2 milds."
     },
     { date: "06/28/1852",
       pages: ["22"],
+      locations:[{name: "Big Sandy", lat:42.229634, lon:-109.411339}],
       entry: "Monday the 28. came to big Sandy and campt. 17 milds."
     },
     { date: "06/29/1852",
@@ -221,6 +244,7 @@ diarydata = { entries: [
     },
     { date: "06/30/1852",
       pages: ["22"],
+      locations: [{name: "Green River", lat:42.177670, lon:-110.180518}],
       entry: "Wensday the 30, came to Green River and crost. Travelled 15 milds."
     },
     { date: "07/01/1852",
@@ -237,14 +261,15 @@ diarydata = { entries: [
     },
     { date: "07/04/1852",
       pages: ["24", "25"],
-      entry: "Sunday the 4 day of July. This is a beautiful fine morning. Wee know travel on to Bane River creek valley a disstant of 9 milds. And campt at 12 o'clock and staid the ballance of the day to wrest hour selves and teams. In the evening the clouds rose up in the west. The wind blew, the rain fell, and just at Knight the snow came down in mity torrents on the hy hy mountains above us and next morning a heavy frost and evry thing froze hard. The children crying with the cold. And such a devel of a time as it was I never seen for the time a [of] year before, we traveld today 9 milds."
+      entry: "Sunday the 4 day of July. This is a beautiful fine morning. Wee know travel on to Bare [Bear] River creek valley a disstant of 9 milds. And campt at 12 o'clock and staid the ballance of the day to wrest hour selves and teams. In the evening the clouds rose up in the west. The wind blew, the rain fell, and just at Knight the snow came down in mity torrents on the hy hy mountains above us and next morning a heavy frost and evry thing froze hard. The children crying with the cold. And such a devel of a time as it was I never seen for the time a [of] year before, we traveld today 9 milds."
     },
     { date: "07/05/1852",
       pages: ["25"],
-      entry: "Monday the 5 of July, a fine prety day today. Know wee are on Bane River valley and traveld 22 milds today."
+      entry: "Monday the 5 of July, a fine prety day today. Know wee are on Bare [Bear] River valley and traveld 22 milds today."
     },
     { date: "07/06/1852",
       pages: ["25"],
+      locations: [{ name: "Soda Springs", lat:42.648461, lon:-111.611839}],
       entry: "Tuesday the 6 of July, up early, all hands buisey and traveld 23 milds. And is in 23 milds of the soda springs. The snow is in sight of us all the time. The mountains is verry hy and good warter."
     },
     { date: "07/07/1852",
@@ -253,7 +278,7 @@ diarydata = { entries: [
     },
     { date: "07/08/1852",
       pages: ["26"],
-      entry: "Thursday the 8 day of July. This is a remarkable cool morning, frost a plenty. This day wee get to the great soda springs. Wee pass them at eleven oclock. So wee travel on till the middle of the afterknoon. Then camp on one mild BeanT [beneath, downstream from] the pool of warter. This Pool dose tas [does taste] verry strong of sulpher. So ends the day. Know we leave Bane River for good. It emtys itself in Salt Lake 60 milds from this plais."
+      entry: "Thursday the 8 day of July. This is a remarkable cool morning, frost a plenty. This day wee get to the great soda springs. Wee pass them at eleven oclock. So wee travel on till the middle of the afterknoon. Then camp on one mild BeanT [beneath, downstream from] the pool of warter. This Pool dose tas [does taste] verry strong of sulpher. So ends the day. Know we leave Bare [Bear] River for good. It emtys itself in Salt Lake 60 milds from this plais."
     },
     { date: "07/09/1852",
       pages: ["26", "27"],
@@ -269,6 +294,7 @@ diarydata = { entries: [
     },
     { date: "07/12/1852",
       pages: ["28"],
+      locations: [{name: "Fort Hall", lat:43.019751, lon:-112.634715}],
       entry: 'Monday the 12, Morning wee strike for fort Hall. Wee got there at knoon and went on to grand Rodney [the flood plain meadows at the confluence of the Portneuf and Snake Rivers, now drowned beneath the American Falls Reservoir; from the French "grand rondee"] 8 milds. Staid all  nite, shifted hour loads and crost and went on 5 milds and campt. Keep a sharp look out for the snake and digger indiens.'
     },
     { date: "07/13/1852",
@@ -281,10 +307,12 @@ diarydata = { entries: [
     },
     { date: "07/15/1852",
       pages: ["29"],
+      locations: [{name: "Raft River", lat: 42.572277, lon: -113.229521}],
       entry: "Thursday the 15, campt on raft river, good grass and warter. 12 M."
     },
     { date: "07/16/1852",
       pages: ["29"],
+      locations: [{ name: "Marsh Creek", lat:42.527739, lon:-113.554679}],
       entry: "Friday the 16, To Marsh Creek 15 milds, good grass and warter But rough roads and some broken."
     },
     { date: "07/17/1852",
@@ -297,6 +325,7 @@ diarydata = { entries: [
     },
     { date: "07/19/1852",
       pages: ["30"],
+      locations: [{name: "Rock Creek", lat:42.529650, lon:-114.437107}],
       entry: "Monday the 19, we traveld on to Rock Creek and campt, prety good roads, all but 1/2 mild, the last. good warter and plenty of grass and lotts of sage for fuel. And the disstant 13 M. And set some waggon tires."
     },
     { date: "07/20/1852",
@@ -309,6 +338,7 @@ diarydata = { entries: [
     },
     { date: "07/22/1852",
       pages: ["31", "32"],
+      locations: [{name: "Salmon Falls Creek", lat:42.710611, lon:-114.853770}],
       entry: "Thursday The 22 July, 1852, Tollerable grass and Lay by till Saturday till 2 oclock. Then drove 5 milds to Sammon falls on Snake River. And lay by 3 hours. Then struck out for a long drive over the dessert. A distant of 33 milds. Wee fild hour warter pots and canns and started for the drive and drove till mid knight and stopt till morning. Then drove 5 or 6 milds to Snake River And wartered hour teames and rested them 2 hours. Yet no grass for 16 m. Know wee still travel on to day."
     },
     { date: "07/25/1852",
@@ -317,6 +347,7 @@ diarydata = { entries: [
     },
     { date: "07/26/1852",
       pages: ["32"],
+      locations: [{name: "Three Island Crossing", lat:42.931995, lon:-115.335145}],
       entry: "Monday the 26 of July, Wee are know 2 miles below the old crossing on the Snake River to fort Hall. Stopt hear at knoon and lay the balance of the day."
     },
     { date: "07/27/1852",
@@ -361,6 +392,7 @@ diarydata = { entries: [
     },
     { date: "08/06/1852",
       pages: ["38"],
+      locations: [{name: "Owyhee River", lat:43.782293, lon:-117.099285}],
       entry: "Friday the 6 day, started early this morning and came to Oywhee river today. Wee drove today 18. Grass rather scears, warter plenty. Philemon Delacy is verry sick today."
     },
     { date: "08/07/1852",
@@ -369,11 +401,13 @@ diarydata = { entries: [
     },
     { date: "08/08/1852",
       pages: ["39"],
+      locations: [{name: "Malheur River", lat:43.978899, lon:-117.236649}],
       entry: "Sunday the 8 day of August. This morning wee struck out for Malhear river. 15 miles over a good road, some dusty. A long and a graguel [gradual] assend and then a long desend. Good grass 3/4 of a mile above the road and warter. Willows for fuel. It is warm today. This river come from a lake from the foot of the blew mountains some 40 miles abov."
     },
     { date: "08/09/1852",
       pages: ["39"],
-      entry: "Monday the 9, 1852, wee travel on to the sulpher springs 12 m. And warter hour oxen. No plase to camp. Then 6 miles to dry creek. Good grass but no warter. Then to Barch Creek 4 miles, good warter, grass scears, and campt."
+      locations: [{name: "Birch Creek", lat: 44.263488, lon: -117.217979}],
+      entry: "Monday the 9, 1852, wee travel on to the sulpher springs 12 m. And warter hour oxen. No plase to camp. Then 6 miles to dry creek. Good grass but no warter. Then to Barch [Birch] Creek 4 miles, good warter, grass scears, and campt."
     },
     { date: "08/10/1852",
       pages: ["40"],
@@ -385,6 +419,7 @@ diarydata = { entries: [
     },
     { date: "08/12/1852",
       pages: ["41", "42", "43", "44", "45"],
+      locations: [{name: "Burnt River", lat: 44.362503, lon: -117.277083}],
       entry: "Thursday the 12 day of August. This morning wee travel up Burnt River 6 miles and cross it several times. Wee hav crost it ten times in all.  The further wee hav traveld up this beautiful stream, the more it dose change its appearance. Up where wee cross it last or nearly so wee doo find some prety good sised timber for the first [time] for a Leven or 12 hundred miles. Wee doo find the soil change in its appearance as well as a good many other things after wee cross and leave snake to hour left hand. Some two hundred yards wee come to a beautiful little stream and follow up it for 3 miles and cross it eight times in all.  With roling ground but good roads. Then wee leave this stream and assend a verry hy mountain. Hard on your teames. Then desend a long hill and travel on 4 miles and come to a sulfer spring on a small branch one [and] 1/2 mile down the stream. Good plais to knoon. Then wee travel one mile down the little stream and come to the forks of the road. If you take the left hand, it leads to Burnt river which is one mile and a desirable plais to camp. Good grass. The right hand after leaving the forks of road you assend a hy hill and then desend down hill and come to a beautiful little branch. Gow down 1. Good plais to camp. Then you come to the Burnt river bottoms agane. Good camps all along fo[r] about 4 miles. Hear is some prety good sised timber on this stream. Hear wee come to a small branch that puts in burnt river. Stopt for the knight. The wild sage is know verry scears but some little greasweed. The dust has not been so bad today. Wee are well and in good sperrets. Hear wee doo leave Burnt river for good and has traveld up this stream for 37 milds."
     },
     { date: "08/13/1852",
@@ -397,6 +432,7 @@ diarydata = { entries: [
     },
     { date: "08/15/1852",
       pages: ["46"],
+      locations: [{name: "Powder River", lat:45.025364, lon:-117.916920}],
       entry: "Sunday the 15 day of August, campt on Powder River and travled over the first slew of P.R. 5 miles. Then 5 miles to the second slew. Then 6  miles to one branch of Powder river. Then to powder river 4 miles over a fine roling country. And crost some few little streams of warter and some rocky roads."
     },
     { date: "08/16/1852",
@@ -409,6 +445,7 @@ diarydata = { entries: [
     },
     { date: "08/18/1852",
       pages: ["49", "50"],
+      locations: [{name: "Blue Mountains", lat:45.397613, lon:-118.312053}],
       entry: "Wensday the 18, 1852 day of August, This morning left the grand Round valley and did assend a verry hy mountain. It is the commencement of the blew mountains. After wee get to the summet of the mountains then wee hav good roads. It is 8 miles a cross to Grand Round river. Just before wee get to the river wee doo hav to desend a steep long hill. This is a tollerable plais to camp in the fore part of the season. P.  Morriss. Wee stayd all knight here. As we took the mountains this  morning the wind blew, the clowds flew and it raind. O, heavens how  cold it is. The clowds was below the tops of the mountains. Overmans  child was berred this morning hear. This is a good plase to camp by crossing the river and gow on the side on the mountain up the ravein."
     },
     { date: "08/01/1852",
@@ -433,10 +470,12 @@ diarydata = { entries: [
     },
     { date: "08/24/1852",
       pages: ["53", "54"],
+      locations: [{name: "Umatilla Indian Agency", lat:45.6662417, lon:-118.6730338}],
       entry: "Tuesday the 24 day of August, 1852. Early this morning wee put out. Went to the agency 2 miles [the Umatilla Indian Agency, established in  1851, burned by Cayuse Indians in 1855 at the start of the Yakima War, and officially abandoned in 1856]. And then assended a tollerable sand,  hy sand hill and traveld 10 miles over a sandy road and come to Alder  Creek. A good plais to campt. Warter and wood a plenty. Campt for the day."
     },
     { date: "08/25/1852",
       pages: ["54"],
+      locations: [{name: "Well Spring", lat:45.641662, lon:-119.689124}],
       entry: "Wensday the 25 day of August 1852. Lay by till 4 oclock in the afterknoon. Then wee went to the well springs 20 miles over a hy roling  country. Some 2 or 3 steep hills to pull up. Rather sandy and bad dust and bad warter and verry scears and but little grass and fuel for to use."
     },
     { date: "08/26/1852",
@@ -449,14 +488,17 @@ diarydata = { entries: [
     },
     { date: "08/28/1852",
       pages: ["56"],
+      locations: [{name: "John Day River Crossing", lat:45.588372, lon:-120.408975}],
       entry: "Satirday the 28 day of August 1852. We left hear this afterknoon and went to John days river 6 miles over a rough road. And crost the branch 5 or 6 times and followd down the canion all the way to the river and campt."
     },
     { date: "08/29/1852",
       pages: ["56"],
+      locations: [{name: "Columbia River", lat:45.663640, lon:-120.853275}],
       entry: "Sunday the 29 day of August. Left John days river this morning. Did assend a verry hy mountain rough and rocky and steep. Got to the summet and the roads forked. Wee took the wright hand over a hy roling country. Good roads and good grass all the way for 25 miles over to the Columba and campt for the knight."
     },
     { date: "08/30/1852",
       pages: ["56", "57"],
+      locations: [{name: "Deschutes River Crossing", lat:45.632900, lon:-120.912145}],
       entry: "Monday the 30. In the morning yoaked up and went 5 miles down the Columba river. Over a good road to the Deshutes river and stayd the ballance of the day. The day is verry warm."
     },
     { date: "08/31/1852",
@@ -481,10 +523,12 @@ diarydata = { entries: [
     },
     { date: "09/05/1852",
       pages: ["59"],
+      locations: [{name: "Barlow Road", lat:45.583480, lon:-121.179224}],
       entry: "Sunday the 5th day of September 1852. Lay by to recrute hour teames. The wind blows hard and looks like it wood rain shortly. And did stay hear about 2 days and it beeing in 3 miles of the [Barlow Road] Tole  gate at the foot of the Cascade Mountains. Then the wind lay and wee struck out across the Cascade mountains and was in the mountains 10 days. It was a bad time but got threw safe."
     },
     { date: "09/15/1852",
       pages: ["88"],
+      locations: [{name: "Philip Foster Farm", lat:45.358290, lon:-122.355154}],
       entry: "And wee got threw Cascades Mountain the 15 day of September 1852, at Fill Fosters [Phillip Foster's farm]."
     },
     { date: "11/10/1852",

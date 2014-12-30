@@ -12,7 +12,7 @@
     <title>Philemon and Minerva Morriss</title>
 
     <style type="text/css">
-    #map-canvas { height: 600px; width:800px; margin: 0; padding: 0}
+    #map-canvas, #map-canvas2 { height: 600px; width:800px; margin: 0; padding: 0}
     table, tbody, thead, tr, th, td {
        margin: 0;
        padding: 0;
@@ -21,6 +21,7 @@
     </style>
     <script src="javascripts/jquery-1.11.2.js"></script>
     <script type="text/javascript" src="javascripts/transcription.js"></script>
+    <script type="text/javascript" src="javascripts/oregon_trail.js"></script>
     <script type="text/javascript"
      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAF3PMeM_Cxy8SZe8ulcSLrKwQ8QtBT7lY">
     </script>
@@ -28,14 +29,15 @@
     var surveyOverlay;
     var surveyOverlay2;
     var map;
+    var map2;
     function toggleSurvey(id) {
        console.log(id);
        if (+id === 1) {
-         surveyOverlay.setMap(map);
+         surveyOverlay.setMap(map2);
          surveyOverlay2.setMap(null);
        } else if (+id === 2) {
          surveyOverlay.setMap(null);
-         surveyOverlay2.setMap(map);
+         surveyOverlay2.setMap(map2);
        } else {
          surveyOverlay.setMap(null);
          surveyOverlay2.setMap(null);
@@ -47,15 +49,75 @@
        return s;
      };
     function initialize() {
-        var mapOptions = {
-          center: { lng:-122.682317, lat: 44.789566},
-          zoom: 13,
-          maxZoom: 13,
-          mapTypeId: google.maps.MapTypeId.TERRAIN
+       var mapOptions = {
+         center: { lng:-109.054378, lat: 42.881179},
+         zoom: 5,
         };
        map = new google.maps.Map(document.getElementById('map-canvas'),
             mapOptions);
+       var features = oregon_trail_1.features.filter(function(d) {
+                                         if (d.geometry.type == "Point") {
+                                             return false;
+                                         } else {
+                                             return true;
+                                         }
+                                      });
+       oregon_trail_1.features = features;
+       features = oregon_trail_2.features.filter(function(d) {
+                                         if (d.geometry.type == "Point") {
+                                             return false;
+                                         } else {
+                                             return true;
+                                         }
+                                      });
+       oregon_trail_2.features = features;
 
+       map.data.addGeoJson(oregon_trail_1);
+       map.data.addGeoJson(oregon_trail_2);
+
+      var i;
+      var locations = [];
+      var j;
+      var loc;
+      for (i = 0; i < diarydata.entries.length; i++) {
+        if (diarydata.entries[i].locations) {
+           for (j = 0; j < diarydata.entries[i].locations.length; j++) {
+               loc = diarydata.entries[i].locations[j];
+               loc.entry = i;
+               locations.push(loc);
+           }
+        }
+      }
+
+     clickfn = function (j) {
+       return function() {
+             var top = document.getElementById('entry-date').offsetTop;
+             set_entry(diarydata.entries[j], j);
+             window.scrollTo(0, top);
+           };
+      }
+
+      var marker;
+      var infowindow;
+      for (i = 0; i < locations.length; i++) {
+         j = locations[i].entry;
+         marker = new google.maps.Marker({
+                       position: new google.maps.LatLng(locations[i].lat, locations[i].lon),
+                       map: map,
+                       title: locations[i].name,
+                     });
+         google.maps.event.addDomListener(marker, 'click', clickfn(j));
+      }
+      };
+
+      function initialize2() {
+       var mapOptions2 = {
+         center: { lng:-122.682317, lat: 44.789566},
+         zoom: 13,
+         maxZoom: 13,
+         mapTypeId: google.maps.MapTypeId.TERRAIN
+       };
+      map2 = new google.maps.Map(document.getElementById('map-canvas2'), mapOptions2);
        var geojson = {"type": "FeatureCollection",
                           "crs": { "type": "name",
                                     "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" }
@@ -64,35 +126,38 @@
                            { "type": "Feature", "properties": { "AREA": 13812708.899650, "PERIMETER": 16170.964430, "DLCPOLY_": 610, "DLCPOLY_ID": 3578, "TWN": "9S", "RNG": "1E", "DLC_": "54", "DLC_NUM": "DLC #54", "DLC": 54.000000 }, "geometry": { "type": "Polygon", "coordinates": [ [ [ -122.709095854598999, 44.815265480391915 ], [ -122.68879287692954, 44.81521061458659 ], [ -122.688860016586233, 44.808466854399676 ], [ -122.69928888123934, 44.808521838897121 ], [ -122.699252226685246, 44.808067293679493 ], [ -122.70898834686912, 44.806997132891965 ], [ -122.709111982579188, 44.812273278050498 ], [ -122.709095854598999, 44.815265480391915 ] ] ] } }
                            ]}
 
-       map.data.addGeoJson(geojson);
-       map.data.setStyle({fillColor: 'orange', strokeWeight: 1, strokeColor: 'red'});
+       map2.data.addGeoJson(geojson);
 
+      map2.data.setStyle({fillColor: 'orange', strokeWeight: 1, strokeColor: 'red'});
 
       var ne = new google.maps.LatLng(44.8247260, -122.6210898);
       var sw = new google.maps.LatLng(44.7373812, -122.7437056);
       var imageBounds = new google.maps.LatLngBounds(sw, ne);
 
       surveyOverlay = new google.maps.GroundOverlay('images/overlay.jpg', imageBounds);
-      surveyOverlay.setMap(map);
+      surveyOverlay.setMap(map2);
       surveyOverlay.setOpacity(0.7);
 
       surveyOverlay2 = new google.maps.GroundOverlay('images/overlay2.jpg', imageBounds);
       surveyOverlay2.setMap(null);
       surveyOverlay2.setOpacity(0.5);
+      };
 
-      }
+
       google.maps.event.addDomListener(window, 'load', initialize);
+      google.maps.event.addDomListener(window, 'load', initialize2);
 
-     function set_entry(entry) {
+     function set_entry(entry, i) {
        var baseurl = "https://raw.githubusercontent.com/cmaes/philemonandminerva/master/diary-scan/";
        var url = baseurl + entry.pages[0] + ".jpg";
        $('#diary-entry').text(entry.entry);
        $('#entry-date').text(entry.date);
        $('#entry-page').html("Page " + entry.pages[0] + "<br/>" +
                              "<a href='" + url + "'><img src='" + url + "' width='600px'/></a>" +
-                             "<span style='float:left'><a href='" + baseurl + pad(+entry.pages[0]-1,2) + ".jpg'>Previous page</a></span>" +
-                             "<span style='float:right'><a href='" + baseurl + pad(+entry.pages[0]+1,2) + ".jpg'>Next page</a></span>");
+                             "<div style='float:left'><a href='" + baseurl + pad(+entry.pages[0]-1,2) + ".jpg'>Previous page</a><br><a href='#entry-date' onclick='set_entry(diarydata.entries[" + (+i-1) +"]," + (+i-1) + ")'>Previous entry</a></div>" +
+                             "<div style='float:right'><a href='" + baseurl + pad(+entry.pages[0]+1,2) + ".jpg'>Next page</a><br><a href='#entry-date' onclick='set_entry(diarydata.entries[" + (+i+1) + "]," + (+i+1) + ")'>Next entry</a></div>");
      }
+
 
     </script>
   </head>
@@ -1170,7 +1235,7 @@ well as a <a href="https://raw.githubusercontent.com/cmaes/philemonandminerva/ma
     </tbody>
   </table>
 
-  <div class="spacer" style="height:20px">
+  <div class="spacer" style="height:20px;">
   </div>
 
   <table id="mct1" class="ct1 cl2 cp5 cc3 cd2 cg4 cf6 ci6 cu5 cj2 mct" cellspacing="0">
@@ -1330,21 +1395,34 @@ well as a <a href="https://raw.githubusercontent.com/cmaes/philemonandminerva/ma
 </div>
 <div id="entry-page">
 </div>
-<div class="spacer" style="height:20px">
+<div class="spacer" style="height:20px; clear:both">
 </div>
 
+<div id="map-canvas">
+</div>
+<h2>Map of Diary Entries</h2>
+<p>The map above shows the locations noted in Philemon's diary. Clicking on a
+red marker brings up the corresponding diary entry.</p>
+
+<p>The black line indicates one of the standard routes taken by pioneers. Note that
+locations of markers are approximate based on interpertations of the diary.</p>
 
 <h3>Philemon and Minerva's Homestead</h3>
 <p> Philemon and Minerva received 320 acres near Sublimity Oregon through a Donation Land Claim.
 The map below shows the extent of their homestead. Overlaid on the map is the original 1854 survey
 of the Township No. 9 South of Range No. 1 East where the land was located. You can make out their
 house near the lower left corner of the property. You can also view an overlay of the 1863 survey.
+
+<p>An 1856 survey of Philemon's land claim described it as follows:
+<i>This claim is quite broken, a considerable portion covered with oak bushes and scattering fir
+timbers, soil fair average.</i></p>
+
 <form action="">
 <input type="radio" name="survey" value="none" onclick="toggleSurvey(0)"/>No overlay<br/>
 <input type="radio" name="survey" value="one"  onclick="toggleSurvey(1)" checked="checked"/>Show 1854 survey<br/>
 <input type="radio" name="survey" value="two"  onclick="toggleSurvey(2)"/>Show 1863 survey<br/>
 </form>
-<div id="map-canvas">
+<div id="map-canvas2">
 </div>
 
 <h3>Got Questions or More Information?</h3>
@@ -1391,13 +1469,13 @@ Please email Chris Maes (cmmaes@gmail.com), descendent of Philemon Morriss, or E
    if (element) {
      $('#' + id + ' td').each(function() {
        if (+$(this).text() === day) {
-         $(this).html("<a href='#entry-date' onclick='set_entry(diarydata.entries[" + i + "])'>" + day + "</a>");
+         $(this).html("<a href='#entry-date' onclick='set_entry(diarydata.entries[" + i + "]," + i + ")'>" + day + "</a>");
        }
      });
    }
  }
 
- set_entry(diarydata.entries[0]);
+ set_entry(diarydata.entries[0], 0);
 
 })();
 
