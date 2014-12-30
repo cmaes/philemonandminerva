@@ -253,7 +253,7 @@ diarydata = { entries: [
     },
     { date: "07/02/1852",
       pages: ["23"],
-      entry: "Friday the 2 day of July 1852, all up early and to work this morning took a early start. Travled on till knoon, fine roads today till wee got in 6 milds of the other road on Sublets cut of [the Sublette Cutoff]. Then wee had some high hills and rough roads. Wee travled today 20 milds. And know wee lay by the popler Ridg [Poplar Ridge]. Snow for several days in sight."
+      entry: "Friday the 2 day of July 1852, all up early and to work this morning took a early start. Travled on till knoon, fine roads today till wee got in 6 milds of the other road, or Sublets cut of [the Sublette Cutoff]. Then wee had some high hills and rough roads. Wee travled today 20 milds. And know wee lay by the popler Ridg [Poplar Ridge]. Snow for several days in sight."
     },
     { date: "07/03/1852",
       pages: ["23", "24"],
