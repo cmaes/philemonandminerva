@@ -230,21 +230,22 @@ diarydata = { entries: [
     { date: "06/27/1852",
       pages: ["21", "22"],
       locations: [{name: "Parting of the Ways", lat: 42.2851392, lon: -109.057786},
-                  {name: "Little Sandy", lat:42.259224, lon:-109.302118}],
+                  {name: "Little Sandy", lat:42.196170, lon:-109.347356}],
       entry: "Sunday the 27, Left Prosific creek this morning came to dry creek 9 milds. Water scears and bad, no grass. One mild and knoond without grass or warter or wood. Came on to the junction of the road where it devids. One gows to Salt Lake and the other to Callifornia. 6 milds wee take Left hand road. Hear is the plais that Hays left us. Hays left today. And go on to Little Sandy 7 1/2 milds and campt. The day is fine and the roads is good. Today 22 1/2 milds."
     },
     { date: "06/28/1852",
       pages: ["22"],
-      locations:[{name: "Big Sandy", lat:42.229634, lon:-109.411339}],
+      locations:[{name: "Big Sandy", lat:42.108390, lon:-109.449698}],
       entry: "Monday the 28. came to big Sandy and campt. 17 milds."
     },
     { date: "06/29/1852",
       pages: ["22"],
+      locations:[{name: "Big Sandy", lat:41.952934, lon:-109.703660}],
       entry: "Tuesday the 29 Came to big Sandy and agane and campt. some grass and plenty of warter. 15 milds."
     },
     { date: "06/30/1852",
       pages: ["22"],
-      locations: [{name: "Green River", lat:42.177670, lon:-110.180518}],
+      locations: [{name: "Green River Crossing", lat:41.880309, lon:-109.808531}],
       entry: "Wensday the 30, came to Green River and crost. Travelled 15 milds."
     },
     { date: "07/01/1852",
