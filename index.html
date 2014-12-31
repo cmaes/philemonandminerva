@@ -22,6 +22,7 @@
     <script src="javascripts/jquery-1.11.2.js"></script>
     <script type="text/javascript" src="javascripts/transcription.js"></script>
     <script type="text/javascript" src="javascripts/oregon_trail.js"></script>
+    <script type="text/javascript" src="javascripts/wyomingtrails.js"></script>
     <script type="text/javascript"
      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAF3PMeM_Cxy8SZe8ulcSLrKwQ8QtBT7lY">
     </script>
@@ -53,6 +54,7 @@
        var mapOptions = {
          center: { lng:-109.054378, lat: 42.881179},
          zoom: 5,
+         minZoom: 5
         };
        map = new google.maps.Map(document.getElementById('map-canvas'),
             mapOptions);
@@ -75,6 +77,11 @@
 
        map.data.addGeoJson(oregon_trail_1);
        map.data.addGeoJson(oregon_trail_2);
+       map.data.addGeoJson(wyoming_trails);
+
+       map.data.addListener('mouseover', function(event) {
+         console.log(event.feature.k);
+       });
 
       var i;
       var locations = [];
