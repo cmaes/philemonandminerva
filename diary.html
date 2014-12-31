@@ -19,7 +19,7 @@
     <style type="text/css">
     #diary-entries { height: 1200px; overflow: auto; }
     #diary-page { overflow: auto; }
-    #map-canvas, #map-canvas2 { height: 600px; width:100%; margin: 0; padding: 0}
+    #map-canvas, #map-canvas2 { height: 400px; width:100%; margin: 0; padding: 0}
     table, tbody, thead, tr, th, td {
        margin: 0;
        padding: 0;
@@ -46,7 +46,7 @@
        var entry = diarydata.entries[j];
        var baseurl = "https://raw.githubusercontent.com/cmaes/philemonandminerva/master/diary-scan/"
        var url = baseurl + entry.pages[0] + ".jpg";
-       $('#diary-page').html("<a href='" + url + "'><img src='" + url + "' height='600'/></a>");
+       $('#diary-page').html("<a href='" + url + "'><img src='" + url + "' height='800'/></a>");
      };
      function set_marker(j) {
         var i;
@@ -128,7 +128,6 @@
            if ($(this).position().top > 0) {
              $(this).addClass('bg-success');
              if (diarydata.entries[idx].locations) {
-                console.log(diarydata.entries[idx].locations, idx, $(this).attr('id'));
                 set_marker(idx);
              }
              set_page(idx);
@@ -192,13 +191,18 @@
     </p>
     <div class="row">
     <div class="col-md-6">
-    <div id="map-canvas">
+    <h2>Diary Transcript</h2>
     </div>
-    <div id="diary-page">
+    </div>
+    <div class="row">
+    <div class="col-md-6">
+    <div id="diary-entries">
     </div>
     </div>
     <div class="col-md-6">
-    <div id="diary-entries">
+    <div id="map-canvas">
+    </div>
+    <div id="diary-page">
     </div>
     </div>
     </div>
