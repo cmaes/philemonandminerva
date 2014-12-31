@@ -15,6 +15,8 @@
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
 
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-scrollTo/1.4.14/jquery.scrollTo.min.js"></script>
+
     <title>The Diary of Philemon Morriss</title>
     <style type="text/css">
     #diary-entries { height: 1200px; overflow: auto; }
@@ -125,7 +127,7 @@
       $('#diary-entries').scroll(function() {
          $('.phil').removeClass('bg-success').each(function() {
            var idx = +$(this).attr('id').substring(5,10);
-           if ($(this).position().top > 0) {
+           if ($(this).position().top >= 0) {
              $(this).addClass('bg-success');
              if (diarydata.entries[idx].locations) {
                 set_marker(idx);
@@ -138,14 +140,7 @@
 
      clickfn = function (j, marker) {
        return function() {
-             var i;
-             var top = document.getElementById('entry-date').offsetTop;
-             set_entry(diarydata.entries[j], j);
-             for (i = 0; i < markers.length; i++) {
-              markers[i].setIcon('http://maps.google.com/mapfiles/marker.png');
-             }
-             marker.setIcon('http://maps.google.com/mapfiles/ms/icons/yellow-dot.png');
-             window.scrollTo(0, top);
+             $('#diary-entries').scrollTo('#entry' + j);
            };
       }
 
