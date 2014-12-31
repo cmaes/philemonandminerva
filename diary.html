@@ -31,6 +31,7 @@
     <script type="text/javascript" src="javascripts/transcription.js"></script>
     <script type="text/javascript" src="javascripts/oregon_trail.js"></script>
     <script type="text/javascript" src="javascripts/wyomingtrails.js"></script>
+    <script type="text/javascript" src="javascripts/mormon_trail.js"></script>
     <script type="text/javascript"
      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAF3PMeM_Cxy8SZe8ulcSLrKwQ8QtBT7lY">
     </script>
@@ -71,26 +72,27 @@
         };
        map = new google.maps.Map(document.getElementById('map-canvas'),
             mapOptions);
-       var features = oregon_trail_1.features.filter(function(d) {
-                                         if (d.geometry.type == "Point") {
-                                             return false;
-                                         } else {
-                                             return true;
-                                         }
-                                      });
-       oregon_trail_1.features = features;
-       features = oregon_trail_2.features.filter(function(d) {
-                                         if (d.geometry.type == "Point") {
-                                             return false;
-                                         } else {
-                                             return true;
-                                         }
-                                      });
-       oregon_trail_2.features = features;
+
+      var remove_points = function(geo) {
+       var features = geo.features.filter(function(d) {
+                             if (d.geometry.type == "Point") {
+                               return false;
+                             } else {
+                               return true;
+                             }
+                           });
+       geo.features = features;
+       return geo;
+      }
+
+      oregon_trail_1 = remove_points(oregon_trail_1);
+      oregon_trail_2 = remove_points(oregon_trail_1);
+      mormon_trail_1 = remove_points(mormon_trail_1);
 
        map.data.addGeoJson(oregon_trail_1);
        map.data.addGeoJson(oregon_trail_2);
        map.data.addGeoJson(wyoming_trails);
+       map.data.addGeoJson(mormon_trail_1);
 
        var geojson = {"type": "FeatureCollection",
                           "crs": { "type": "name",
