@@ -533,6 +533,7 @@ diarydata = { entries: [
       entry: "And wee got threw Cascades Mountain the 15 day of September 1852, at Fill Fosters [Phillip Foster's farm]."
     },
     { date: "11/10/1852",
+      locations: [{name: "Philemon Morris Homestead", lat:44.811207, lon:-122.703472}],
       pages: ["60"],
       entry: "I did move to my house on the 10 day of November 1852."
     },
