@@ -40,6 +40,7 @@
     var map2;
     var markers = [];
     var markersMap = {};
+    var lastScrollTop = 0;
     function pad(num, size) {
        var s = num+"";
        while (s.length < size) s = "0" + s;
@@ -126,19 +127,55 @@
       }
       $('#entry0').addClass('bg-success');
 
+      jQuery.fn.reverse = [].reverse;
+
       $('#diary-entries').scroll(function() {
-         $('.phil').removeClass('bg-success').each(function() {
-           var idx = +$(this).attr('id').substring(5,10);
-           if ($(this).position().top >= 0) {
-             $(this).addClass('bg-success');
-             if (diarydata.entries[idx].locations) {
-                set_marker(idx);
+         var curr_select =  $('.bg-success');
+         var st = $(this).scrollTop();
+         if (curr_select.length === 1) {
+          if (curr_select.position().top >= 0 &&
+              curr_select.position().top < 1200) {
+            return;
+          }
+         }
+
+         if (st > lastScrollTop) {
+           $('.phil').removeClass('bg-success').each(function() {
+             var idx = +$(this).attr('id').substring(5,10);
+             if ($(this).position().top >= 0) {
+               $(this).addClass('bg-success');
+               if (diarydata.entries[idx].locations) {
+                  set_marker(idx);
+               }
+               set_page(idx);
+               return false; // stops the iteration after the first one on screen
              }
-             set_page(idx);
-             return false; // stops the iteration after the first one on screen
-           }
-         });
+           });
+         } else {
+           $('.phil').removeClass('bg-success').reverse().each(function() {
+             var idx = +$(this).attr('id').substring(5,10);
+             if ($(this).position().top >= 0 && $(this).position().top < 1200) {
+               $(this).addClass('bg-success');
+               if (diarydata.entries[idx].locations) {
+                  set_marker(idx);
+               }
+               set_page(idx);
+               return false; // stops the iteration after the first one on screen
+             }
+           });
+         }
+         lastScrollTop = st;
       });
+
+     $('.phil').click(function() {
+        var idx = +$(this).attr('id').substring(5,10);
+        $('.phil').removeClass('bg-success');
+        $(this).addClass('bg-success');
+        if (diarydata.entries[idx].locations) {
+           set_marker(idx);
+        }
+        set_page(idx);
+     });
 
      clickfn = function (j, marker) {
        return function() {
